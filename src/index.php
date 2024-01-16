@@ -15,12 +15,7 @@ foreach ($array as $value) {
 	$product *= $value;
 	if ($value === 5) {
 		$countFive++;
-	} elseif ($value % 3 === 0) {
-		foreach ($divisibleByThree as $number) {
-			if ($number === $value) {
-				continue 2;
-			}
-		}
+	} elseif ($value % 3 === 0 && !in_array($value, $divisibleByThree, true)) {
 		$divisibleByThree[] = $value;
 	}
 }
